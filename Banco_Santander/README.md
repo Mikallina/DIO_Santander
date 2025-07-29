@@ -23,11 +23,11 @@ A aplicação permite operações bancárias como:
 
 - **Java 17** – Linguagem principal
 - **Spring Boot** – Framework backend
-- **Thymeleaf** – Template engine para renderização no servidor
-- **Bootstrap** – Estilização e responsividade da interface
 - **Maven** – Gerenciador de dependências e build
 - **APIs** – Integração com APIs internas e externas para dados e validações
 - **MySQL** - Integração com Banco de Dados
+- **Swagger** - Springdoc
+- **Railway** - Deploy em Nuvem
 
 ---
 
