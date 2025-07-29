@@ -22,9 +22,7 @@ import java.util.Optional;
 public class CartaoServiceImpl  implements CartaoService {
 
     private final CartaoRepository cartaoRepository;
-
     private final ContaRepository contaRepository;
-
     private final CartaoUtil cartaoUtil;
     private final CategoriaLimiteUtil categoriaLimiteUtil;
 
@@ -51,9 +49,6 @@ public class CartaoServiceImpl  implements CartaoService {
             System.out.println("Novo cartão adicionado: " + cartao.getNumCartao());
         }
     }
-
-
-
 
     @Override
     public Cartao criarCartao(Conta conta, TipoCartao tipoCartao, int senha, String diaVencimento, Categoria categoria) {

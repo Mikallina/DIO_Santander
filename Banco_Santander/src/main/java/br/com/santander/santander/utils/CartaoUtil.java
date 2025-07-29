@@ -1,7 +1,10 @@
 package br.com.santander.santander.utils;
 
+import org.springframework.stereotype.Service;
+
 import java.util.Random;
 
+@Service
 public class CartaoUtil {
     private static final Random RANDOM = new Random();
 

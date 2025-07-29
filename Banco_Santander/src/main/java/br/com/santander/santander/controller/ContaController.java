@@ -102,35 +102,35 @@ public class ContaController {
 		}
 	}
 
-	@PutMapping("/{idConta}/manutencao")
-	public ResponseEntity<String> aplicarTaxaManutencao(@PathVariable Long idConta, TipoConta tipoConta) {
+//	@PutMapping("/{idConta}/manutencao")
+//	public ResponseEntity<String> aplicarTaxaManutencao(@PathVariable Long idConta, TipoConta tipoConta) {
+//
+//		try {
+//			boolean sucesso = contaService.aplicarTaxaOuRendimento(idConta, tipoConta.CORRENTE, true);
+//			if (sucesso) {
+//				return ResponseEntity.ok("Taxa de Manutenção aplicada com sucesso");
+//			} else {
+//				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Erro ao aplicar a taxa");
+//			}
+//		} catch (IllegalArgumentException e) {
+//			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+//		}
+//
+//	}
 
-		try {
-			boolean sucesso = contaService.aplicarTaxaOuRendimento(idConta, tipoConta.CORRENTE, true);
-			if (sucesso) {
-				return ResponseEntity.ok("Taxa de Manutenção aplicada com sucesso");
-			} else {
-				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Erro ao aplicar a taxa");
-			}
-		} catch (IllegalArgumentException e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
-		}
-
-	}
-
-	@PutMapping("/{idConta}/rendimentos")
-	public ResponseEntity<String> aplicarRendimentos(@PathVariable Long idConta, TipoConta tipoConta) {
-		try {
-			boolean sucesso = contaService.aplicarTaxaOuRendimento(idConta, tipoConta.CORRENTE, false);
-			if (sucesso) {
-				return ResponseEntity.ok("Rendimento aplicado com sucesso");
-			} else {
-				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Erro ao aplicar a taxa");
-			}
-		} catch (IllegalArgumentException e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
-		}
-	}
+//	@PutMapping("/{idConta}/rendimentos")
+//	public ResponseEntity<String> aplicarRendimentos(@PathVariable Long idConta, TipoConta tipoConta) {
+//		try {
+//			boolean sucesso = contaService.aplicarTaxaOuRendimento(idConta, tipoConta.CORRENTE, false);
+//			if (sucesso) {
+//				return ResponseEntity.ok("Rendimento aplicado com sucesso");
+//			} else {
+//				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Erro ao aplicar a taxa");
+//			}
+//		} catch (IllegalArgumentException e) {
+//			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+//		}
+//	}
 
 	@GetMapping("/exibirSaldoDetalhado")
 	public ResponseEntity<?> exibirSaldoDetalhado(@RequestParam String cpf, @RequestParam String numConta) {

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface ContaService {
 
 
@@ -31,7 +30,7 @@ public interface ContaService {
      boolean realizarTransferencia(double valor, String numContaOrigem, String numContaDestino,
                                          boolean transferenciaPoupança, boolean transferenciaPix, boolean transferenciaOutrasContas);
 
-     boolean aplicarTaxaOuRendimento(Long idConta, TipoConta tipoConta, boolean conta);
+    // boolean aplicarTaxaOuRendimento(Long idConta, TipoConta tipoConta, boolean conta);
      Conta buscarContas(String conta);
 
      Conta buscarContaPorClienteEConta(String cpf, String numConta);

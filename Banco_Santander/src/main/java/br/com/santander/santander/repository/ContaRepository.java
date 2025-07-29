@@ -17,5 +17,7 @@ public interface ContaRepository extends JpaRepository<Conta, Long> {
 
     List<Conta> findByCliente(Cliente cliente);
 
-    Optional<ContaCorrente> findByClienteAndTipoConta(Long idConta, TipoConta tipoConta, boolean conta);
+
+
+
 }

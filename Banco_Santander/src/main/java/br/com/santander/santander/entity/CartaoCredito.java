@@ -12,16 +12,10 @@ public class CartaoCredito extends Cartao {
 	protected double taxa = 0.5;
 	protected LocalDate dataVencimento;
 	protected LocalDate dataCompra;
-
-	@Column(precision = 13, scale = 2)
 	protected double pagamento;
-	@Column(precision = 13, scale = 2)
 	protected double saldoCredito;
-	@Column(precision = 13, scale = 2)
 	protected double saldoMes;
 	protected String diaVencimento;
-
-	@Column(precision = 13, scale = 2)
 	private double limiteCredito;
 
 

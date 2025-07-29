@@ -12,7 +12,6 @@ public class CartaoDebito extends Cartao {
 	
 	@ManyToOne
 	private Conta conta;
-	@Column(precision = 13, scale = 2)
 	private double limiteDiario;
 	private double totalPgtoHoje = 0;
 	

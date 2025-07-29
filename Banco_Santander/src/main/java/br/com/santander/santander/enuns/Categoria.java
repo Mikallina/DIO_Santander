@@ -8,8 +8,6 @@ public enum Categoria {
 
 	private final String descricao;
 
-
-
 	public String getDescricao() {
 		return descricao;
 	}

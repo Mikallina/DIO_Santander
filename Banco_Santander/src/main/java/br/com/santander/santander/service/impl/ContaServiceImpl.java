@@ -167,28 +167,28 @@ public class ContaServiceImpl implements ContaService {
             return true;
         }
 
-    @Override
-    public boolean aplicarTaxaOuRendimento(Long idConta, TipoConta tipoConta, boolean conta) {
-        Optional<ContaCorrente> contaCorrenteOpt = contaRepository.findByClienteAndTipoConta(idConta,tipoConta,conta);
-        if (contaCorrenteOpt.isEmpty()) {
-            throw new IllegalArgumentException("Conta não encontrada");
-        }
-
-        ContaCorrente contaCorrente = contaCorrenteOpt.get();
-
-        // Buscar cliente
-        Cliente cliente = contaCorrente.getCliente(); // ou usar clienteRepository.findById() se necessário
-
-        // Aplica taxa de manutenção
-        double taxa = contaUtil.taxaManutencaoCC(cliente, tipoConta, contaCorrente);
-
-        // Atualiza a conta com a taxa aplicada
-        contaCorrente.setSaldo(contaCorrente.getSaldo() - taxa);
-        contaRepository.save(contaCorrente);
-
-        return true;
-
-    }
+//    @Override
+//    public boolean aplicarTaxaOuRendimento(Long idConta, TipoConta tipoConta, boolean conta) {
+//        Optional<Conta> contaCorrenteOpt = contaRepository.findByClienteAndTipoConta(idConta,tipoConta,conta);
+//        if (contaCorrenteOpt.isEmpty()) {
+//            throw new IllegalArgumentException("Conta não encontrada");
+//        }
+//
+//        Conta contaCorrente = contaCorrenteOpt.get();
+//
+//        // Buscar cliente
+//        Cliente cliente = contaCorrente.getCliente(); // ou usar clienteRepository.findById() se necessário
+//
+//        // Aplica taxa de manutenção
+//        double taxa = contaUtil.taxaManutencaoCC(cliente, tipoConta, (ContaCorrente) contaCorrente);
+//
+//        // Atualiza a conta com a taxa aplicada
+//        contaCorrente.setSaldo(contaCorrente.getSaldo() - taxa);
+//        contaRepository.save(contaCorrente);
+//
+//        return true;
+//
+//    }
 
 
     @Override

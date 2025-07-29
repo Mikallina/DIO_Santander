@@ -32,7 +32,6 @@ public abstract class Conta {
 
     protected int agencia;
     protected String numConta;
-    @Column(precision = 13, scale = 2)
     protected double saldo;
 
     @Enumerated(EnumType.STRING)

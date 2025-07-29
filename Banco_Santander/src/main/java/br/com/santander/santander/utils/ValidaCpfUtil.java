@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.InputMismatchException;
 
-@Service
+
 public class ValidaCpfUtil {
     private ValidaCpfUtil() {
         throw new UnsupportedOperationException("Classe utilitária");
