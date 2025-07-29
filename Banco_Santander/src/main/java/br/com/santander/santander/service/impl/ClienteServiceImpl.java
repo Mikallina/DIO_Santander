@@ -65,10 +65,6 @@ public class ClienteServiceImpl implements ClienteService {
         return validaClienteUtil.validarEndereco(endereco);
     }
 
-    @Override
-    public boolean validarCEP(String cep) {
-        return validaClienteUtil.validarCep(cep);
-    }
 
     @Override
     public boolean validarDataNascimento(LocalDate dataNascimento) {
@@ -87,9 +83,6 @@ public class ClienteServiceImpl implements ClienteService {
         }
         if (!validarDataNascimento(cliente.getDataNascimento())) {
             throw new Exception("Data de nascimento inválida.");
-        }
-        if (!validarCEP((cliente.getEndereco().getCep()))){
-            throw new Exception(("Cep inválido"));
         }
     }
 

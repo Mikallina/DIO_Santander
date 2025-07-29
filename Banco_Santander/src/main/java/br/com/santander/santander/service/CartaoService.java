@@ -5,8 +5,11 @@ import br.com.santander.santander.entity.Cartao;
 import br.com.santander.santander.entity.Conta;
 import br.com.santander.santander.enuns.Categoria;
 import br.com.santander.santander.enuns.TipoCartao;
+import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
 import java.util.List;
+
 
 
 public interface CartaoService {

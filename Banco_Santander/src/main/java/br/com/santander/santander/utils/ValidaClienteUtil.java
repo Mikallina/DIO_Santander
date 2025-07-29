@@ -11,7 +11,12 @@ import java.util.regex.Pattern;
 @Service
 public class ValidaClienteUtil {
 
-    ClienteRepository clienteRepository;
+   private final ClienteRepository clienteRepository;
+
+    public ValidaClienteUtil(ClienteRepository clienteRepository) {
+        this.clienteRepository = clienteRepository;
+    }
+
     public static boolean validarNome(String nome) {
         return nome != null &&
                 nome.length() >= 2 &&

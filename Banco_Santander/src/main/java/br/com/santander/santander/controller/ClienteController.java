@@ -3,8 +3,8 @@ package br.com.santander.santander.controller;
 
 import br.com.santander.santander.entity.Cliente;
 import br.com.santander.santander.entity.Endereco;
-import br.com.santander.santander.service.impl.CepServiceImpl;
-import br.com.santander.santander.service.impl.ClienteServiceImpl;
+import br.com.santander.santander.service.CepService;
+import br.com.santander.santander.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,11 +17,15 @@ import java.util.Optional;
 @RequestMapping("/cliente")
 public class ClienteController {
 
-	@Autowired
-	private ClienteServiceImpl clienteService;
 
-	@Autowired
-	private CepServiceImpl cepService;
+	private final ClienteService clienteService;
+
+	private final CepService cepService;
+
+	public ClienteController(ClienteService clienteService, CepService cepService) {
+		this.clienteService = clienteService;
+		this.cepService = cepService;
+	}
 
 	@PostMapping("/adicionar-cliente")
 	public ResponseEntity<String> addCliente(@RequestBody Cliente cliente) {

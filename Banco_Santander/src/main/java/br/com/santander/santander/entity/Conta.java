@@ -4,6 +4,8 @@ package br.com.santander.santander.entity;
 import br.com.santander.santander.enuns.TipoConta;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -11,6 +13,15 @@ import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "tipo"
+)
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = ContaCorrente.class, name = "corrente"),
+        @JsonSubTypes.Type(value = ContaPoupanca.class, name = "poupanca")
+})
 public abstract class Conta {
 
     public List<Cartao> getCartoes() {

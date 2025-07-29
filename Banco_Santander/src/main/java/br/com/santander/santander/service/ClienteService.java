@@ -2,6 +2,7 @@ package br.com.santander.santander.service;
 
 import br.com.santander.santander.entity.Cliente;
 import br.com.santander.santander.entity.Endereco;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -26,8 +27,6 @@ public interface ClienteService {
 	boolean validarNome(String nome);
 
 	boolean validarEndereco(Endereco endereco);
-
-	boolean validarCEP(String cep);
 
 	boolean validarDataNascimento(LocalDate dataNascimento);
 }

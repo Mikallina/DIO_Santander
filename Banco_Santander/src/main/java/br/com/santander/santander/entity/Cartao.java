@@ -2,10 +2,21 @@ package br.com.santander.santander.entity;
 
 import br.com.santander.santander.enuns.TipoCartao;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import jakarta.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@JsonTypeInfo(
+		use = JsonTypeInfo.Id.NAME,
+		include = JsonTypeInfo.As.PROPERTY,
+		property = "tipo"
+)
+@JsonSubTypes({
+		@JsonSubTypes.Type(value = CartaoCredito.class, name = "credito"),
+		@JsonSubTypes.Type(value = CartaoDebito.class, name = "debito")
+})
 
 public abstract class Cartao {
 
