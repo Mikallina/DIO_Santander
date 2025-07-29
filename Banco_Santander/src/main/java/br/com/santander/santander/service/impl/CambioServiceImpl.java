@@ -1,5 +1,6 @@
 package br.com.santander.santander.service.impl;
 
+import br.com.santander.santander.execptions.CambioException;
 import br.com.santander.santander.service.CambioService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
@@ -25,7 +26,7 @@ public class CambioServiceImpl implements CambioService {
     private String apiKey;
 
     @Override
-    public double obterCotacao(String moedaBase, String moedaDestino) throws Exception {
+    public double obterCotacao(String moedaBase, String moedaDestino) throws CambioException {
         try {
 
             String url = String.format("%s/%s/latest/%s", apiUrl, apiKey, moedaBase);
@@ -56,7 +57,7 @@ public class CambioServiceImpl implements CambioService {
             return cotacao;
 
         }catch (Exception e){
-            throw new Exception("Erro ao buscar as cotacao: " + e);
+            throw new CambioException("Erro ao buscar as cotacao: " + e);
 
         }
 
