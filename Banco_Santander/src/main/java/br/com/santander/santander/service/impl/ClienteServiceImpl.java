@@ -74,6 +74,7 @@ public class ClienteServiceImpl implements ClienteService {
     private void validarCliente(Cliente cliente, boolean isAtualizar) throws Exception {
         if (!validarCpf(cliente.getCpf(), isAtualizar, cliente.getIdCliente())) {
             throw new Exception("CPF inválido ou já cadastrado.");
+
         }
         if (!validarNome(cliente.getNome())) {
             throw new Exception("Nome inválido.");
